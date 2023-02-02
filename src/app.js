@@ -20,19 +20,19 @@ const usersDB = [
     password: "AmRk",
     age:  32
 }
-]
+];
 
-let baseID = 3
+let baseID = 3;
 
 app.get('/', (req, res) => {
     res.status(200).json({
         message: 'Server ok!'
     })
-})
+});
 
 app.get('/users', (req, res) => {
     res.json(usersDB)
-})
+});
 
 
 app.get('/users/:id', (req, res) => {
@@ -48,7 +48,7 @@ app.get('/users/:id', (req, res) => {
             message: 'Invalid ID'
         })
     }
-})
+});
 
 app.post('/users', (req, res) => {
     const data = req.body
@@ -64,7 +64,7 @@ app.post('/users', (req, res) => {
 
     usersDB.push(newUser)
     res.status(201).json(newUser)
-})
+});
 
 app.listen(9000),() => {
     console.log('Server started at : http://localhost:9000')
